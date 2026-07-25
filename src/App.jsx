@@ -41,22 +41,22 @@ const days = [
   {
     date: "10.01",
     weekday: "THU",
-    city: "东京 · 上野 / 秋叶原",
-    title: "古寺、博物馆与电器街",
-    lead: "上午看传统文化，下午切换到动漫与游戏街区，路线集中在东京东北侧。",
-    route: "浅草 → 上野 → 秋叶原",
+    city: "东京 · 上野 / 秋叶原 / 银座",
+    title: "古寺、动漫与银座文豪之夜",
+    lead: "白天从江户文化走到动漫街区，傍晚转入银座购物，以 Bar Lupin 收尾。",
+    route: "浅草 → 上野 → 秋叶原 → 银座",
     schedule: [
       ["08:30", "浅草寺", "雷门、仲见世、神社与御朱印", MapPin],
       ["10:30", "东京国立博物馆", "本馆与东洋馆，预留 2 小时", Ticket],
-      ["15:00", "秋叶原", "游戏、扭蛋与电器街；晚餐烧鸟", Camera],
+      ["15:00", "秋叶原 → 银座", "先逛游戏街区，17:30 银座购物，20:00 Bar Lupin", Camera],
     ],
     photos: [
       ["sensoji.jpg", "浅草寺", "清晨先避开人流"],
       ["tokyo-national-museum-real.jpg", "东京国立博物馆", "上野公园内的本馆"],
-      ["akihabara-unsplash.jpg", "秋叶原", "下午逛街与购物"],
+      ["ginza-jnto.jpg", "银座与 Bar Lupin", "先购物，后进入文豪酒吧"],
     ],
-    notes: ["午餐：上野附近寿司", "博物馆行程控制在 2 小时", "晚餐：秋叶原或浅草烧鸟"],
-    reserve: "确认博物馆休馆日",
+    notes: ["午餐：上野附近寿司", "银座商场闭店前先完成购物", "Lupin 现金结算；入店先询问拍照规则"],
+    reserve: "博物馆开放时间；Bar Lupin 当日营业",
     accent: "#194b68",
   },
   {
@@ -83,93 +83,93 @@ const days = [
   {
     date: "10.03",
     weekday: "SAT",
-    city: "东京 → 大阪",
-    title: "东京站出发，傍晚吃到大阪",
-    lead: "上午不赶景点，把时间留给退房与车站；下午搭新干线，晚上逛道顿堀。",
-    route: "东京站 → 新大阪 → 难波",
+    city: "东京 → 京都",
+    title: "新干线越过富士山，住进京都",
+    lead: "上午从东京站出发，车上吃便当看富士山；下午把清水寺到祇园走成一条线。",
+    route: "东京站 → 京都站 → 清水寺 → 祇园",
     schedule: [
-      ["10:30", "东京站", "丸之内站舍、百货地下街与午餐", MapPin],
-      ["13:00", "东海道新干线", "选 D / E 侧座位，途中看富士山", Train],
-      ["18:00", "难波 · 道顿堀", "味乃家大阪烧，散步至法善寺", ForkKnife],
+      ["09:30", "东京站", "丸之内站舍、百货地下街与车站便当", MapPin],
+      ["11:00", "东海道新干线", "选 D / E 连座，E 座窗边看富士山", Train],
+      ["14:30", "清水寺 → 祇园", "二三年坂、八坂塔、鸭川与京都纪念餐", ForkKnife],
     ],
     photos: [
       ["tokyo-station-real.jpg", "东京站", "丸之内红砖站舍"],
-      ["shinkansen-real.jpg", "东海道新干线", "东京到新大阪"],
-      ["dotonbori-unsplash.jpg", "道顿堀", "大阪第一晚的霓虹街区"],
+      ["fuji-train-unsplash.jpg", "东海道新干线", "天气允许时从 E 座看富士山"],
+      ["gion-night-pexels.jpg", "祇园", "东山散步后的古都夜色"],
     ],
-    notes: ["大件行李提前寄送更轻松", "东京站提前 40 分钟到", "住宿：难波 / 心斋桥"],
-    reserve: "新干线指定席（D / E 侧）",
+    notes: ["大件行李可提前寄往大阪，仅带一晚小包去京都", "清水寺必须先于二三年坂", "住宿：京都町屋 / 别墅"],
+    reserve: "东京 → 京都指定席；京都纪念餐",
     accent: "#194b68",
   },
   {
     date: "10.04",
     weekday: "SUN",
-    city: "大阪 · USJ",
-    title: "环球影城完整一天",
-    lead: "这一天不再叠加城市景点，围绕园区入场、任天堂世界与夜间万圣节安排。",
-    route: "难波 → 环球城 → USJ",
+    city: "京都 → 大阪",
+    title: "京都清晨，大阪泡汤与夜食",
+    lead: "趁清晨走过千本鸟居，中午抵达大阪；下午把新世界、泡汤和道顿堀连起来。",
+    route: "伏见稻荷 → 难波 → 新世界 → 道顿堀",
     schedule: [
-      ["07:00", "前往环球城", "尽量在开园前抵达入口", Train],
-      ["09:00", "超级任天堂世界", "优先核心项目，再转哈利·波特园区", Ticket],
-      ["17:30", "夜间活动", "晚餐与万圣节氛围，按体力决定离园", Camera],
+      ["06:30", "伏见稻荷", "千本鸟居走到奥社附近，不必登顶", MapPin],
+      ["11:00", "京都 → 大阪", "入住高津民宿，午餐安排新世界串炸", Train],
+      ["14:30", "SPA WORLD → 道顿堀", "泡汤约 2 小时，晚上大阪烧与霓虹散步", ForkKnife],
     ],
     photos: [
-      ["usj-real.jpg", "超级任天堂世界", "当天最优先的园区"],
-      ["hogwarts-usj-pexels.jpg", "哈利·波特魔法世界", "午后转到霍格沃茨城堡"],
-      ["usj-globe-unsplash.jpg", "USJ 入园地标", "早到后直接进入园区"],
+      ["fushimi-inari-pexels.jpg", "伏见稻荷", "清晨的千本鸟居"],
+      ["onsen-pexels.jpg", "SPA WORLD", "连续步行后的恢复时段"],
+      ["dotonbori-unsplash.jpg", "道顿堀", "大阪烧、章鱼烧与夜景"],
     ],
-    notes: ["入园后立刻确认区域整理券", "午餐尽量错峰", "穿适合长时间步行的鞋"],
-    reserve: "门票 + Express Pass",
+    notes: ["SPA WORLD 10:00 后营业，不安排过夜", "纹身入场限制严格，提前核对", "住宿：大阪高津 / 难波生活圈"],
+    reserve: "京都 → 大阪交通；SPA WORLD 当日信息",
     accent: "#cf3f2d",
   },
   {
     date: "10.05",
     weekday: "MON",
-    city: "大阪 → 京都",
-    title: "上午泡汤，下午进入京都",
-    lead: "先用轻松的温泉恢复体力，再转场京都，把清水寺到祇园串成一条下坡路线。",
-    route: "新世界 → 京都站 → 清水寺 → 祇园",
+    city: "大阪 · USJ",
+    title: "星期一完整留给环球影城",
+    lead: "不移动行李、不叠加城市景点，从开园一直留到万圣节夜场结束。",
+    route: "高津 → 环球城 → USJ",
     schedule: [
-      ["08:45", "SPA WORLD", "泡汤至 10:30，随后新世界吃串炸", ForkKnife],
-      ["12:15", "前往京都", "入住或寄存行李，优先打车去清水寺", Train],
-      ["15:00", "清水寺 → 祇园", "二年坂、三年坂、八坂神社、鸭川", MapPin],
+      ["06:30", "前往环球城", "按官方开园时间倒推，争取提前 60–90 分钟抵达", Train],
+      ["开园后", "超级任天堂世界", "按 Express 时段安排马力欧、咚奇刚与园区探索", Ticket],
+      ["18:00后", "万圣节夜场", "哈利·波特、限定餐食、街头僵尸与夜间氛围", Camera],
     ],
     photos: [
-      ["onsen-pexels.jpg", "日式温泉", "上午恢复体力"],
-      ["kiyomizudera-pexels.jpg", "清水寺", "下午进入京都的第一站"],
-      ["gion-night-pexels.jpg", "祇园", "傍晚继续走到鸭川"],
+      ["usj-real.jpg", "超级任天堂世界", "当天最优先的园区"],
+      ["hogwarts-usj-pexels.jpg", "哈利·波特魔法世界", "午后与夜间氛围都值得保留"],
+      ["usj-globe-unsplash.jpg", "USJ 万圣节", "留到夜场结束再离园"],
     ],
-    notes: ["最晚 10:30 离开 SPA WORLD", "必须先参拜清水寺再走东山", "住宿：京都町屋 / 别墅"],
-    reserve: "京都住宿；确认 SPA 开放时段",
+    notes: ["入园后立刻绑定门票并确认整理券", "主题餐错峰；穿适合全天步行的鞋", "万圣惊魂夜覆盖本次旅行日期"],
+    reserve: "Studio Pass + 含任天堂时段的 Express Pass",
     accent: "#194b68",
   },
   {
     date: "10.06",
     weekday: "TUE",
-    city: "京都 → 关西机场",
-    title: "伏见稻荷清晨，午后返程",
-    lead: "最后一天只保留一个早晨景点，回酒店吃早餐、退房，再搭 HARUKA 去机场。",
-    route: "伏见稻荷 → 京都站 → KIX",
+    city: "大阪 → 关西机场",
+    title: "慢早餐与最后购物，从难波返程",
+    lead: "USJ 后不再早起赶景点，上午在难波轻松收尾，留足机场与免税购物时间。",
+    route: "高津 → 难波 → KIX",
     schedule: [
-      ["06:30", "伏见稻荷大社", "趁早走千本鸟居，不必登顶", MapPin],
-      ["09:00", "早餐与退房", "回酒店取行李，10:30 到京都站", ForkKnife],
-      ["11:15", "HARUKA → KIX", "12:40 左右抵达，16:45 起飞", AirplaneTilt],
+      ["08:30", "大阪早餐", "日式定食或喫茶店，按体力自然醒", ForkKnife],
+      ["10:00", "难波最后购物", "百货地下层、药妆与伴手礼；11:30 前取行李", Camera],
+      ["12:00", "南海难波 → KIX", "优先 Rapi:t，约 13:00 抵达，16:45 起飞", AirplaneTilt],
     ],
     photos: [
-      ["fushimi-inari-pexels.jpg", "伏见稻荷", "清晨的千本鸟居"],
       ["japanese-breakfast-pexels.jpg", "日式早餐", "回酒店后补充体力"],
+      ["dotonbori-unsplash.jpg", "难波", "最后补齐伴手礼与购物"],
       ["kansai-airport-real.jpg", "关西机场", "预留充足值机时间"],
     ],
-    notes: ["鸟居段往返约 60–90 分钟", "京都站买好便当与伴手礼", "起飞前至少 3 小时到机场"],
-    reserve: "HARUKA 指定席 / 机场交通",
+    notes: ["不安排大阪城或远距离景点", "南海难波站预留找站与购票时间", "起飞前至少 3 小时到机场"],
+    reserve: "Rapi:t / 南海机场交通",
     accent: "#cf3f2d",
   },
 ];
 
 const coverPhotos = [
-  ["sensoji-unsplash.jpg", "东京 · 浅草"],
-  ["dotonbori-unsplash.jpg", "大阪 · 道顿堀"],
-  ["kiyomizudera-pexels.jpg", "京都 · 清水寺"],
+  ["sensoji-unsplash.jpg", "东京 · 浅草", "传统街区"],
+  ["kiyomizudera-pexels.jpg", "京都 · 清水寺", "古都步行"],
+  ["dotonbori-unsplash.jpg", "大阪 · 道顿堀", "夜间美食"],
 ];
 
 function Photo({ item, large = false }) {
@@ -189,27 +189,27 @@ function Cover({ goToDay }) {
     <section className="slide cover-slide">
       <div className="cover-copy">
         <span className="eyebrow">JAPAN TRIP · 7 DAYS</span>
-        <h1>东京 · 大阪 · 京都<br />旅行计划</h1>
+        <h1>东京 · 京都 · 大阪<br />旅行计划</h1>
         <p className="cover-date">2026.09.30 — 10.06</p>
         <div className="cover-route">
-          {["东京 3晚", "大阪 2晚", "京都 1晚"].map((stop, index) => (
-            <button key={stop} onClick={() => goToDay(index === 0 ? 1 : index === 1 ? 4 : 6)}>
+          {["东京 3晚", "京都 1晚", "大阪 2晚"].map((stop, index) => (
+            <button key={stop} onClick={() => goToDay(index === 0 ? 1 : index === 1 ? 4 : 5)}>
               <span>{index + 1}</span>{stop}
             </button>
           ))}
         </div>
         <div className="cover-meta">
           <span><AirplaneTilt /> 成田进 · 关西出</span>
-          <span><Train /> 东京 → 新大阪 → 京都</span>
-          <span><Bed /> 浅草 / 难波 / 京都站</span>
+          <span><Train /> 东京 → 京都 → 大阪</span>
+          <span><Bed /> 吾妻桥 / 京都町屋 / 高津</span>
         </div>
       </div>
       <div className="cover-gallery">
         {coverPhotos.map((photo, index) => (
-          <Photo key={photo[0]} item={[...photo, index === 0 ? "传统街区" : index === 1 ? "夜间美食" : "古都步行"]} large={index === 0} />
+          <Photo key={photo[0]} item={photo} large={index === 0} />
         ))}
       </div>
-      <span className="cover-stamp">行程视觉版<br />V1.0</span>
+      <span className="cover-stamp">行程视觉版<br />V2.0</span>
     </section>
   );
 }
@@ -262,7 +262,7 @@ function DaySlide({ day, dayIndex }) {
           </div>
           <div className="weather-note">
             <span>穿着提示</span>
-            <strong>{dayIndex === 4 ? "轻便鞋 · 可快速干燥" : "分层穿搭 · 随身小伞"}</strong>
+            <strong>{dayIndex === 5 ? "轻便鞋 · 可快速干燥" : "分层穿搭 · 随身小伞"}</strong>
           </div>
         </aside>
       </div>
@@ -272,9 +272,9 @@ function DaySlide({ day, dayIndex }) {
 
 function Checklist() {
   const groups = [
-    ["先订", ["USJ 门票与含任天堂时段的 Express Pass", "Shibuya Sky 日落时段票", "东京 → 新大阪 D / E 连座", "京都纪念餐"]],
-    ["出发前确认", ["味乃家 FastPass", "SPA WORLD 维护与开放信息", "HARUKA 指定席", "博物馆开放时段"]],
-    ["行李策略", ["东京 → 大阪可考虑行李配送", "USJ 当天只带小包", "大阪退房后先寄存行李", "返程预留机场购物时间"]],
+    ["先订", ["USJ 门票与含任天堂时段的 Express Pass", "Shibuya Sky 日落时段票", "东京 → 京都 D / E 连座", "京都纪念餐"]],
+    ["出发前确认", ["Bar Lupin 营业信息与现金", "SPA WORLD 维护与开放信息", "Rapi:t 机场交通", "博物馆开放时段"]],
+    ["行李策略", ["东京可将大行李直送大阪", "京都只带一晚随身包", "USJ 当天只带小包", "返程预留机场购物时间"]],
   ];
   return (
     <section className="slide checklist-slide">
@@ -295,9 +295,9 @@ function Checklist() {
       <div className="final-route">
         <div><MapPin weight="fill" /><strong>东京</strong><span>3晚</span></div>
         <i></i>
-        <div><MapPin weight="fill" /><strong>大阪</strong><span>2晚</span></div>
-        <i></i>
         <div><MapPin weight="fill" /><strong>京都</strong><span>1晚</span></div>
+        <i></i>
+        <div><MapPin weight="fill" /><strong>大阪</strong><span>2晚</span></div>
         <i></i>
         <div><AirplaneTilt weight="fill" /><strong>关西机场</strong><span>返程</span></div>
       </div>

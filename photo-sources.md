@@ -10,6 +10,7 @@ All destination imagery used in the prototype is genuine web-sourced photography
 | `sensoji-unsplash.jpg` | Sensō-ji | Unsplash, photo by Jezael Melgoza |
 | `tokyo-national-museum-real.jpg` | Tokyo National Museum | Unsplash search result |
 | `akihabara-unsplash.jpg` | Akihabara | Unsplash |
+| `ginza-jnto.jpg` | Ginza at night | [Japan National Tourism Organization](https://www.japan.travel/en/destinations/kanto/tokyo/ginza-and-nihombashi/) |
 | `meiji-shrine-unsplash.jpg` | Meiji Shrine | Unsplash |
 | `takeshita-street-unsplash.jpg` | Takeshita Street | Unsplash |
 | `shibuya-crossing-unsplash.jpg` | Shibuya | Unsplash |
