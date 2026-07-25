@@ -19,14 +19,14 @@ const A = `${import.meta.env.BASE_URL}assets/places/`;
 const days = [
   {
     date: "09.30",
-    weekday: "TUE",
+    weekday: "WED",
     city: "东京 · 浅草",
     title: "抵达东京，先把浅草走熟",
     lead: "落地后只安排一条轻松线路：机场 → 酒店 → 隅田川 → 浅草夜景。",
     route: "成田机场 → 吾妻桥 → 浅草寺",
     schedule: [
       ["14:00", "成田机场 T1", "入境、取行李，搭车进市区", AirplaneTilt],
-      ["17:30", "浅草 / 吾妻桥", "入住后沿隅田川散步", Bed],
+      ["17:00", "浅草 / 吾妻桥", "入住后沿隅田川散步", Bed],
       ["19:00", "雷门 · 浅草寺", "看夜景，晚餐选鳗鱼饭或居酒屋", MapPin],
     ],
     photos: [
@@ -34,19 +34,19 @@ const days = [
       ["tokyo-skytree.jpg", "隅田川沿岸", "吾妻桥可见晴空塔"],
       ["sensoji-unsplash.jpg", "浅草寺", "晚间灯光更安静"],
     ],
-    notes: ["交通留出 90–120 分钟", "第一晚不安排跨区移动", "住宿：浅草 / 本所吾妻桥"],
+    notes: ["优先查看浅草方向 Access 特急", "第一晚不安排跨区移动", "住宿：吾妻桥民宿"],
     reserve: "机场交通与首晚住宿",
     accent: "#cf3f2d",
   },
   {
     date: "10.01",
-    weekday: "WED",
+    weekday: "THU",
     city: "东京 · 上野 / 秋叶原",
     title: "古寺、博物馆与电器街",
     lead: "上午看传统文化，下午切换到动漫与游戏街区，路线集中在东京东北侧。",
     route: "浅草 → 上野 → 秋叶原",
     schedule: [
-      ["08:00", "浅草寺", "早参、神社与御朱印", MapPin],
+      ["08:30", "浅草寺", "雷门、仲见世、神社与御朱印", MapPin],
       ["10:30", "东京国立博物馆", "本馆与东洋馆，预留 2 小时", Ticket],
       ["15:00", "秋叶原", "游戏、扭蛋与电器街；晚餐烧鸟", Camera],
     ],
@@ -61,7 +61,7 @@ const days = [
   },
   {
     date: "10.02",
-    weekday: "THU",
+    weekday: "FRI",
     city: "东京 · 原宿 / 涩谷",
     title: "从明治神宫走到涩谷夜景",
     lead: "绿荫、潮流街区与城市天际线放在同一天，基本可以步行串联。",
@@ -82,7 +82,7 @@ const days = [
   },
   {
     date: "10.03",
-    weekday: "FRI",
+    weekday: "SAT",
     city: "东京 → 大阪",
     title: "东京站出发，傍晚吃到大阪",
     lead: "上午不赶景点，把时间留给退房与车站；下午搭新干线，晚上逛道顿堀。",
@@ -103,7 +103,7 @@ const days = [
   },
   {
     date: "10.04",
-    weekday: "SAT",
+    weekday: "SUN",
     city: "大阪 · USJ",
     title: "环球影城完整一天",
     lead: "这一天不再叠加城市景点，围绕园区入场、任天堂世界与夜间万圣节安排。",
@@ -124,14 +124,14 @@ const days = [
   },
   {
     date: "10.05",
-    weekday: "SUN",
+    weekday: "MON",
     city: "大阪 → 京都",
     title: "上午泡汤，下午进入京都",
     lead: "先用轻松的温泉恢复体力，再转场京都，把清水寺到祇园串成一条下坡路线。",
     route: "新世界 → 京都站 → 清水寺 → 祇园",
     schedule: [
       ["08:45", "SPA WORLD", "泡汤至 10:30，随后新世界吃串炸", ForkKnife],
-      ["12:30", "前往京都", "入住或寄存行李，转巴士去清水寺", Train],
+      ["12:15", "前往京都", "入住或寄存行李，优先打车去清水寺", Train],
       ["15:00", "清水寺 → 祇园", "二年坂、三年坂、八坂神社、鸭川", MapPin],
     ],
     photos: [
@@ -139,13 +139,13 @@ const days = [
       ["kiyomizudera-pexels.jpg", "清水寺", "下午进入京都的第一站"],
       ["gion-night-pexels.jpg", "祇园", "傍晚继续走到鸭川"],
     ],
-    notes: ["大阪退房后直接带行李转场", "清水寺之后一路下坡", "住宿：京都站周边"],
+    notes: ["最晚 10:30 离开 SPA WORLD", "必须先参拜清水寺再走东山", "住宿：京都町屋 / 别墅"],
     reserve: "京都住宿；确认 SPA 开放时段",
     accent: "#194b68",
   },
   {
     date: "10.06",
-    weekday: "MON",
+    weekday: "TUE",
     city: "京都 → 关西机场",
     title: "伏见稻荷清晨，午后返程",
     lead: "最后一天只保留一个早晨景点，回酒店吃早餐、退房，再搭 HARUKA 去机场。",
@@ -190,7 +190,7 @@ function Cover({ goToDay }) {
       <div className="cover-copy">
         <span className="eyebrow">JAPAN TRIP · 7 DAYS</span>
         <h1>东京 · 大阪 · 京都<br />旅行计划</h1>
-        <p className="cover-date">2025.09.30 — 10.06</p>
+        <p className="cover-date">2026.09.30 — 10.06</p>
         <div className="cover-route">
           {["东京 3晚", "大阪 2晚", "京都 1晚"].map((stop, index) => (
             <button key={stop} onClick={() => goToDay(index === 0 ? 1 : index === 1 ? 4 : 6)}>
@@ -272,9 +272,9 @@ function DaySlide({ day, dayIndex }) {
 
 function Checklist() {
   const groups = [
-    ["先订", ["往返机票", "东京 / 大阪 / 京都住宿", "USJ 门票与 Express Pass", "Shibuya Sky 时段票"]],
-    ["出发前确认", ["新干线指定席", "HARUKA 机场交通", "博物馆与温泉开放时段", "海外流量 / 交通卡 / 旅行保险"]],
-    ["行李策略", ["东京 → 大阪可考虑行李配送", "USJ 当天只带小包", "京都最后一晚住车站附近", "返程预留机场购物时间"]],
+    ["先订", ["USJ 门票与含任天堂时段的 Express Pass", "Shibuya Sky 日落时段票", "东京 → 新大阪 D / E 连座", "京都纪念餐"]],
+    ["出发前确认", ["味乃家 FastPass", "SPA WORLD 维护与开放信息", "HARUKA 指定席", "博物馆开放时段"]],
+    ["行李策略", ["东京 → 大阪可考虑行李配送", "USJ 当天只带小包", "大阪退房后先寄存行李", "返程预留机场购物时间"]],
   ];
   return (
     <section className="slide checklist-slide">
@@ -329,7 +329,7 @@ export function App() {
     <main className="prototype-shell">
       <div className="deck">
         {content}
-        <div className="deck-corner">JP · 2025</div>
+        <div className="deck-corner">JP · 2026</div>
       </div>
       <nav className="deck-nav" aria-label="幻灯片导航">
         <button className="arrow-button" aria-label="上一页" disabled={page === 0} onClick={() => safeSetPage(page - 1)}><ArrowLeft /></button>
