@@ -24,6 +24,7 @@ const days = [
     title: "抵达东京，先把浅草走熟",
     lead: "落地后只安排一条轻松线路：机场 → 酒店 → 隅田川 → 浅草夜景。",
     route: "成田机场 → 吾妻桥 → 浅草寺",
+    mapStops: ["成田 T1", "吾妻桥民宿", "隅田川", "浅草寺"],
     schedule: [
       ["14:00", "成田机场 T1", "入境、取行李，搭车进市区", AirplaneTilt],
       ["17:00", "浅草 / 吾妻桥", "入住后沿隅田川散步", Bed],
@@ -45,17 +46,18 @@ const days = [
     title: "古寺、动漫与银座文豪之夜",
     lead: "白天从江户文化走到动漫街区，傍晚转入银座购物，以 Bar Lupin 收尾。",
     route: "浅草 → 上野 → 秋叶原 → 银座",
+    mapStops: ["浅草", "上野博物馆", "秋叶原", "银座购物", "Bar Lupin"],
     schedule: [
       ["08:30", "浅草寺", "雷门、仲见世、神社与御朱印", MapPin],
       ["10:30", "东京国立博物馆", "本馆与东洋馆，预留 2 小时", Ticket],
-      ["15:00", "秋叶原 → 银座", "先逛游戏街区，17:30 银座购物，20:00 Bar Lupin", Camera],
+      ["15:00", "秋叶原 → 银座", "17:30 银座购物，19:15 New Torigin，20:30 Bar Lupin", Camera],
     ],
     photos: [
       ["sensoji.jpg", "浅草寺", "清晨先避开人流"],
       ["tokyo-national-museum-real.jpg", "东京国立博物馆", "上野公园内的本馆"],
       ["ginza-jnto.jpg", "银座与 Bar Lupin", "先购物，后进入文豪酒吧"],
     ],
-    notes: ["午餐：上野附近寿司", "银座商场闭店前先完成购物", "Lupin 现金结算；入店先询问拍照规则"],
+    notes: ["购物二选一：三越＋GINZA SIX，或三丽鸥＋Loft＋UNIQLO", "晚餐：New Torigin 烧鸟与釜饭", "Lupin 现金结算；入店先询问拍照规则"],
     reserve: "博物馆开放时间；Bar Lupin 当日营业",
     accent: "#194b68",
   },
@@ -66,6 +68,7 @@ const days = [
     title: "从明治神宫走到涩谷夜景",
     lead: "绿荫、潮流街区与城市天际线放在同一天，基本可以步行串联。",
     route: "明治神宫 → 原宿 → 涩谷",
+    mapStops: ["明治神宫", "原宿", "Cat Street", "涩谷 PARCO", "Shibuya Sky"],
     schedule: [
       ["08:30", "明治神宫", "清晨参拜，慢走林荫参道", MapPin],
       ["10:30", "竹下通 / Cat Street", "原宿逛街，12:30 午餐", Camera],
@@ -87,6 +90,7 @@ const days = [
     title: "新干线越过富士山，住进京都",
     lead: "上午从东京站出发，车上吃便当看富士山；下午把清水寺到祇园走成一条线。",
     route: "东京站 → 京都站 → 清水寺 → 祇园",
+    mapStops: ["东京站", "富士山车窗", "京都站", "清水寺", "祇园"],
     schedule: [
       ["09:30", "东京站", "丸之内站舍、百货地下街与车站便当", MapPin],
       ["11:00", "东海道新干线", "选 D / E 连座，E 座窗边看富士山", Train],
@@ -108,17 +112,18 @@ const days = [
     title: "京都清晨，大阪泡汤与夜食",
     lead: "趁清晨走过千本鸟居，中午抵达大阪；下午把新世界、泡汤和道顿堀连起来。",
     route: "伏见稻荷 → 难波 → 新世界 → 道顿堀",
+    mapStops: ["伏见稻荷", "大阪高津", "新世界", "SPA WORLD", "道顿堀"],
     schedule: [
       ["06:30", "伏见稻荷", "千本鸟居走到奥社附近，不必登顶", MapPin],
       ["11:00", "京都 → 大阪", "入住高津民宿，午餐安排新世界串炸", Train],
-      ["14:30", "SPA WORLD → 道顿堀", "泡汤约 2 小时，晚上大阪烧与霓虹散步", ForkKnife],
+      ["14:30", "SPA WORLD → 道顿堀", "泡汤约 2 小时；大阪烧、大丸与 BOOKOFF 按体力选择", ForkKnife],
     ],
     photos: [
       ["fushimi-inari-pexels.jpg", "伏见稻荷", "清晨的千本鸟居"],
       ["onsen-pexels.jpg", "SPA WORLD", "连续步行后的恢复时段"],
       ["dotonbori-unsplash.jpg", "道顿堀", "大阪烧、章鱼烧与夜景"],
     ],
-    notes: ["SPA WORLD 10:00 后营业，不安排过夜", "纹身入场限制严格，提前核对", "住宿：大阪高津 / 难波生活圈"],
+    notes: ["午餐可选新世界串炸或黑门しゃぶ笑寿喜烧", "SPA WORLD 10:00 后营业；纹身限制严格", "晚间顺路：大丸心斋桥、BOOKOFF、格力高"],
     reserve: "京都 → 大阪交通；SPA WORLD 当日信息",
     accent: "#cf3f2d",
   },
@@ -129,6 +134,7 @@ const days = [
     title: "星期一完整留给环球影城",
     lead: "不移动行李、不叠加城市景点，从开园一直留到万圣节夜场结束。",
     route: "高津 → 环球城 → USJ",
+    mapStops: ["大阪高津", "环球城", "任天堂世界", "哈利·波特", "万圣节夜场"],
     schedule: [
       ["06:30", "前往环球城", "按官方开园时间倒推，争取提前 60–90 分钟抵达", Train],
       ["开园后", "超级任天堂世界", "按 Express 时段安排马力欧、咚奇刚与园区探索", Ticket],
@@ -150,6 +156,7 @@ const days = [
     title: "慢早餐与最后购物，从难波返程",
     lead: "USJ 后不再早起赶景点，上午在难波轻松收尾，留足机场与免税购物时间。",
     route: "高津 → 难波 → KIX",
+    mapStops: ["大阪高津", "难波早餐", "最后购物", "南海难波", "关西 T1"],
     schedule: [
       ["08:30", "大阪早餐", "日式定食或喫茶店，按体力自然醒", ForkKnife],
       ["10:00", "难波最后购物", "百货地下层、药妆与伴手礼；11:30 前取行李", Camera],
@@ -181,6 +188,22 @@ function Photo({ item, large = false }) {
         <span>{item[2]}</span>
       </figcaption>
     </figure>
+  );
+}
+
+function DailyRouteMap({ stops }) {
+  return (
+    <div className="daily-route-map" aria-label={`当天路线：${stops.join("，")}`}>
+      <span className="route-map-label"><NavigationArrow weight="fill" />当天路线图</span>
+      <div className="route-map-stops" style={{ gridTemplateColumns: `repeat(${stops.length}, 1fr)` }}>
+        {stops.map((stop, index) => (
+          <div className="route-map-stop" key={stop}>
+            <span className="route-map-dot">{String(index + 1).padStart(2, "0")}</span>
+            <strong>{stop}</strong>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -230,6 +253,8 @@ function DaySlide({ day, dayIndex }) {
         </div>
         <div className="route-chip"><NavigationArrow weight="fill" />{day.route}</div>
       </header>
+
+      <DailyRouteMap stops={day.mapStops} />
 
       <div className="day-grid">
         <div className="timeline">
