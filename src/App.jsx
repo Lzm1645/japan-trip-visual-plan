@@ -1,4 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 import {
   AirplaneTilt,
   ArrowLeft,
@@ -25,6 +27,12 @@ const days = [
     lead: "落地后只安排一条轻松线路：机场 → 酒店 → 隅田川 → 浅草夜景。",
     route: "成田机场 → 吾妻桥 → 浅草寺",
     mapStops: ["成田 T1", "吾妻桥民宿", "隅田川", "浅草寺"],
+    geoStops: [
+      ["成田机场 T1", 35.7720, 140.3929],
+      ["吾妻桥民宿", 35.7107, 139.8016],
+      ["隅田川", 35.7101, 139.7967],
+      ["浅草寺", 35.7148, 139.7967],
+    ],
     schedule: [
       ["14:00", "成田机场 T1", "入境、取行李，搭车进市区", AirplaneTilt],
       ["17:00", "浅草 / 吾妻桥", "入住后沿隅田川散步", Bed],
@@ -47,6 +55,13 @@ const days = [
     lead: "白天从江户文化走到动漫街区，傍晚转入银座购物，以 Bar Lupin 收尾。",
     route: "浅草 → 上野 → 秋叶原 → 银座",
     mapStops: ["浅草", "上野博物馆", "秋叶原", "银座购物", "Bar Lupin"],
+    geoStops: [
+      ["浅草寺", 35.7148, 139.7967],
+      ["东京国立博物馆", 35.7188, 139.7765],
+      ["秋叶原", 35.6984, 139.7731],
+      ["银座购物", 35.6717, 139.7650],
+      ["Bar Lupin", 35.6716, 139.7638],
+    ],
     schedule: [
       ["08:30", "浅草寺", "雷门、仲见世、神社与御朱印", MapPin],
       ["10:30", "东京国立博物馆", "本馆与东洋馆，预留 2 小时", Ticket],
@@ -69,6 +84,13 @@ const days = [
     lead: "绿荫、潮流街区与城市天际线放在同一天，基本可以步行串联。",
     route: "明治神宫 → 原宿 → 涩谷",
     mapStops: ["明治神宫", "原宿", "Cat Street", "涩谷 PARCO", "Shibuya Sky"],
+    geoStops: [
+      ["明治神宫", 35.6764, 139.6993],
+      ["原宿", 35.6702, 139.7027],
+      ["Cat Street", 35.6659, 139.7071],
+      ["涩谷 PARCO", 35.6620, 139.6988],
+      ["Shibuya Sky", 35.6584, 139.7016],
+    ],
     schedule: [
       ["08:30", "明治神宫", "清晨参拜，慢走林荫参道", MapPin],
       ["10:30", "竹下通 / Cat Street", "原宿逛街，12:30 午餐", Camera],
@@ -91,6 +113,13 @@ const days = [
     lead: "上午从东京站出发，车上吃便当看富士山；下午把清水寺到祇园走成一条线。",
     route: "东京站 → 京都站 → 清水寺 → 祇园",
     mapStops: ["东京站", "富士山车窗", "京都站", "清水寺", "祇园"],
+    geoStops: [
+      ["东京站", 35.6812, 139.7671],
+      ["新富士附近", 35.1614, 138.6764],
+      ["京都站", 34.9858, 135.7588],
+      ["清水寺", 34.9949, 135.7850],
+      ["祇园", 35.0037, 135.7752],
+    ],
     schedule: [
       ["09:30", "东京站", "丸之内站舍、百货地下街与车站便当", MapPin],
       ["11:00", "东海道新干线", "选 D / E 连座，E 座窗边看富士山", Train],
@@ -113,6 +142,13 @@ const days = [
     lead: "趁清晨走过千本鸟居，中午抵达大阪；下午把新世界、泡汤和道顿堀连起来。",
     route: "伏见稻荷 → 难波 → 新世界 → 道顿堀",
     mapStops: ["伏见稻荷", "大阪高津", "新世界", "SPA WORLD", "道顿堀"],
+    geoStops: [
+      ["伏见稻荷", 34.9671, 135.7727],
+      ["大阪高津民宿", 34.6674, 135.5145],
+      ["新世界", 34.6524, 135.5063],
+      ["SPA WORLD", 34.6504, 135.5058],
+      ["道顿堀", 34.6687, 135.5013],
+    ],
     schedule: [
       ["06:30", "伏见稻荷", "千本鸟居走到奥社附近，不必登顶", MapPin],
       ["11:00", "京都 → 大阪", "入住高津民宿，午餐安排新世界串炸", Train],
@@ -135,6 +171,13 @@ const days = [
     lead: "不移动行李、不叠加城市景点，从开园一直留到万圣节夜场结束。",
     route: "高津 → 环球城 → USJ",
     mapStops: ["大阪高津", "环球城", "任天堂世界", "哈利·波特", "万圣节夜场"],
+    geoStops: [
+      ["大阪高津民宿", 34.6674, 135.5145],
+      ["环球城站", 34.6679, 135.4385],
+      ["超级任天堂世界", 34.6648, 135.4323],
+      ["哈利·波特园区", 34.6667, 135.4331],
+      ["万圣节夜场", 34.6654, 135.4323],
+    ],
     schedule: [
       ["06:30", "前往环球城", "按官方开园时间倒推，争取提前 60–90 分钟抵达", Train],
       ["开园后", "超级任天堂世界", "按 Express 时段安排马力欧、咚奇刚与园区探索", Ticket],
@@ -157,6 +200,13 @@ const days = [
     lead: "USJ 后不再早起赶景点，上午在难波轻松收尾，留足机场与免税购物时间。",
     route: "高津 → 难波 → KIX",
     mapStops: ["大阪高津", "难波早餐", "最后购物", "南海难波", "关西 T1"],
+    geoStops: [
+      ["大阪高津民宿", 34.6674, 135.5145],
+      ["难波早餐", 34.6665, 135.5018],
+      ["心斋桥购物", 34.6720, 135.5010],
+      ["南海难波站", 34.6627, 135.5019],
+      ["关西机场 T1", 34.4347, 135.2441],
+    ],
     schedule: [
       ["08:30", "大阪早餐", "日式定食或喫茶店，按体力自然醒", ForkKnife],
       ["10:00", "难波最后购物", "百货地下层、药妆与伴手礼；11:30 前取行李", Camera],
@@ -207,6 +257,116 @@ function DailyRouteMap({ stops }) {
   );
 }
 
+function RouteMapSlide() {
+  const [activeDay, setActiveDay] = useState(0);
+  const containerRef = useRef(null);
+  const mapRef = useRef(null);
+  const routeLayerRef = useRef(null);
+  const day = days[activeDay];
+
+  useEffect(() => {
+    if (!containerRef.current || mapRef.current) return undefined;
+    const map = L.map(containerRef.current, {
+      zoomControl: true,
+      scrollWheelZoom: false,
+      attributionControl: true,
+    });
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors",
+      maxZoom: 19,
+    }).addTo(map);
+    mapRef.current = map;
+    const resizeTimer = window.setTimeout(() => map.invalidateSize(), 80);
+    return () => {
+      window.clearTimeout(resizeTimer);
+      map.remove();
+      mapRef.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    if (routeLayerRef.current) routeLayerRef.current.remove();
+
+    const group = L.layerGroup().addTo(map);
+    routeLayerRef.current = group;
+    const latLngs = day.geoStops.map(([, lat, lng]) => [lat, lng]);
+
+    L.polyline(latLngs, {
+      color: day.accent,
+      weight: 4,
+      opacity: 0.86,
+      dashArray: "8 7",
+    }).addTo(group);
+
+    day.geoStops.forEach(([label, lat, lng], index) => {
+      const marker = L.marker([lat, lng], {
+        icon: L.divIcon({
+          className: "trip-map-marker",
+          html: `<span>${index + 1}</span>`,
+          iconSize: [28, 28],
+          iconAnchor: [14, 14],
+        }),
+      }).addTo(group);
+      marker.bindTooltip(`${index + 1}. ${label}`, {
+        direction: "top",
+        offset: [0, -10],
+      });
+    });
+
+    map.fitBounds(L.latLngBounds(latLngs), {
+      padding: [42, 42],
+      maxZoom: 14,
+    });
+    window.setTimeout(() => map.invalidateSize(), 40);
+  }, [activeDay, day]);
+
+  return (
+    <section className="slide map-slide" style={{ "--accent": day.accent }}>
+      <header className="map-slide-head">
+        <div>
+          <span className="eyebrow">INTERACTIVE ROUTE MAP</span>
+          <h2>七天路线地图</h2>
+          <p>切换日期查看真实位置、当天移动方向与跨城市距离；地图支持拖动和缩放。</p>
+        </div>
+        <div className="map-legend">
+          <span><i></i>当天路线</span>
+          <span><b>1</b>停靠顺序</span>
+        </div>
+      </header>
+
+      <div className="map-layout">
+        <div className="interactive-map" ref={containerRef} aria-label={`${day.date}路线地图`} />
+        <aside className="map-day-panel">
+          <span className="section-label">选择日期</span>
+          <div className="map-day-tabs">
+            {days.map((item, index) => (
+              <button
+                type="button"
+                key={item.date}
+                className={index === activeDay ? "active" : ""}
+                onClick={() => setActiveDay(index)}
+              >
+                <span>D{index + 1}</span>
+                <strong>{item.date}</strong>
+                <em>{item.city.split("·")[0].trim()}</em>
+              </button>
+            ))}
+          </div>
+          <div className="map-route-detail">
+            <span>DAY {activeDay + 1} · {day.weekday}</span>
+            <h3>{day.title}</h3>
+            <ol>
+              {day.geoStops.map(([label]) => <li key={label}>{label}</li>)}
+            </ol>
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
+}
+
 function Cover({ goToDay }) {
   return (
     <section className="slide cover-slide">
@@ -216,7 +376,7 @@ function Cover({ goToDay }) {
         <p className="cover-date">2026.09.30 — 10.06</p>
         <div className="cover-route">
           {["东京 3晚", "京都 1晚", "大阪 2晚"].map((stop, index) => (
-            <button key={stop} onClick={() => goToDay(index === 0 ? 1 : index === 1 ? 4 : 5)}>
+            <button key={stop} onClick={() => goToDay(index === 0 ? 2 : index === 1 ? 5 : 6)}>
               <span>{index + 1}</span>{stop}
             </button>
           ))}
@@ -331,7 +491,7 @@ function Checklist() {
 }
 
 export function App() {
-  const total = days.length + 2;
+  const total = days.length + 3;
   const [page, setPage] = useState(0);
   const safeSetPage = (next) => setPage(Math.max(0, Math.min(total - 1, next)));
 
@@ -346,8 +506,9 @@ export function App() {
 
   const content = useMemo(() => {
     if (page === 0) return <Cover goToDay={safeSetPage} />;
+    if (page === 1) return <RouteMapSlide />;
     if (page === total - 1) return <Checklist />;
-    return <DaySlide day={days[page - 1]} dayIndex={page - 1} />;
+    return <DaySlide day={days[page - 2]} dayIndex={page - 2} />;
   }, [page, total]);
 
   return (
@@ -366,7 +527,7 @@ export function App() {
               aria-label={`第 ${index + 1} 页`}
               onClick={() => safeSetPage(index)}
             >
-              <span>{index === 0 ? "封面" : index === total - 1 ? "清单" : `D${index}`}</span>
+              <span>{index === 0 ? "封面" : index === 1 ? "地图" : index === total - 1 ? "清单" : `D${index - 1}`}</span>
             </button>
           ))}
         </div>
