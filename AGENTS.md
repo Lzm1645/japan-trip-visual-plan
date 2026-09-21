@@ -15,3 +15,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Information priority: each day’s timing, route, destinations, recognizable place photos, transport, meals, and reservation notes.
 - Every destination, transport, and food image in the final prototype must be genuine photography sourced from the web. Do not use AI-generated imagery or synthetic placeholders.
 - Keep a source record for all photographs in `photo-sources.md`.
+- Treat the latest confirmed travel decisions as the content source of truth. Distinguish an actual reservation from a proposed restaurant, and flag uncertain times instead of inventing confirmation.
+- The trip site is public. Never copy raw group-chat messages, booking identifiers, participants' names, or private exports into this repository.

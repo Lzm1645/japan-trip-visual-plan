@@ -22,116 +22,114 @@ const days = [
   {
     date: "09.30",
     weekday: "WED",
-    city: "东京 · 浅草",
-    title: "抵达东京，先把浅草走熟",
-    lead: "落地后只安排一条轻松线路：机场 → 酒店 → 隅田川 → 浅草夜景。",
-    route: "成田机场 → 吾妻桥 → 浅草寺",
-    mapStops: ["成田 T1", "吾妻桥民宿", "隅田川", "浅草寺"],
+    city: "东京 · 银座 / 吾妻桥",
+    title: "抵达东京，银座和牛晚餐",
+    lead: "首晚已有银座晚餐预订，进城和行李优先；浅草夜景留作有余力时的加项。",
+    route: "成田机场 → 银座晚餐 → 吾妻桥",
+    mapStops: ["成田 T1", "银座寄存 / 晚餐", "吾妻桥住宿"],
     geoStops: [
       ["成田机场 T1", 35.7720, 140.3929],
+      ["银座晚餐区域", 35.6717, 139.7650],
       ["吾妻桥民宿", 35.7107, 139.8016],
-      ["隅田川", 35.7101, 139.7967],
-      ["浅草寺", 35.7148, 139.7967],
     ],
     schedule: [
-      ["14:00", "成田机场 T1", "入境、取行李，搭车进市区", AirplaneTilt],
-      ["17:00", "浅草 / 吾妻桥", "入住后沿隅田川散步", Bed],
-      ["19:00", "雷门 · 浅草寺", "看夜景，晚餐选鳗鱼饭或居酒屋", MapPin],
+      ["14:00", "成田机场 T1", "入境、取行李；出关时间不能当成落地时间", AirplaneTilt],
+      ["傍晚", "直达银座或先去民宿", "若晚餐仍是 18:00，优先直达银座并寄存行李", Bed],
+      ["待核对", "银座和牛晚餐", "群里曾订 18:00，也讨论过改晚；以订单时间为准", ForkKnife],
     ],
     photos: [
       ["narita-airport.jpg", "成田机场", "落地与进城"],
-      ["tokyo-skytree.jpg", "隅田川沿岸", "吾妻桥可见晴空塔"],
-      ["sensoji-unsplash.jpg", "浅草寺", "晚间灯光更安静"],
+      ["ginza-jnto.jpg", "银座", "晚餐后再去吾妻桥入住"],
+      ["tokyo-skytree.jpg", "吾妻桥", "首晚有余力再散步"],
     ],
-    notes: ["优先查看浅草方向 Access 特急", "第一晚不安排跨区移动", "住宿：吾妻桥民宿"],
-    reserve: "机场交通与首晚住宿",
+    notes: ["18:00 预订与航班延误冲突风险高", "先核对可否改至 19:30 后", "首晚不再塞浅草寺和 Bar Lupin"],
+    reserve: "银座和牛最终时间、晚到规则",
     accent: "#cf3f2d",
   },
   {
     date: "10.01",
     weekday: "THU",
-    city: "东京 · 上野 / 秋叶原 / 银座",
-    title: "古寺、动漫与银座文豪之夜",
-    lead: "白天从江户文化走到动漫街区，傍晚转入银座购物，以 Bar Lupin 收尾。",
-    route: "浅草 → 上野 → 秋叶原 → 银座",
-    mapStops: ["浅草", "上野博物馆", "秋叶原", "银座购物", "Bar Lupin"],
+    city: "东京 · 浅草 / 上野 / 银座",
+    title: "浅草海鲜丼、博物馆与银座",
+    lead: "围绕已约的 11:45 海鲜丼安排浅草上午；下午看一个馆，晚间购物和 Bar Lupin。",
+    route: "浅草 → 上野 → 银座",
+    mapStops: ["浅草寺 / 海鲜丼", "上野博物馆", "银座购物", "Bar Lupin"],
     geoStops: [
-      ["浅草寺", 35.7148, 139.7967],
+      ["浅草寺 / 海鲜丼区域", 35.7148, 139.7967],
       ["东京国立博物馆", 35.7188, 139.7765],
-      ["秋叶原", 35.6984, 139.7731],
       ["银座购物", 35.6717, 139.7650],
       ["Bar Lupin", 35.6716, 139.7638],
     ],
     schedule: [
-      ["08:30", "浅草寺", "雷门、仲见世、神社与御朱印", MapPin],
-      ["10:30", "东京国立博物馆", "本馆与东洋馆，预留 2 小时", Ticket],
-      ["15:00", "秋叶原 → 银座", "17:30 银座购物，19:15 New Torigin，20:30 Bar Lupin", Camera],
+      ["08:30", "浅草寺 → 海鲜丼", "雷门与仲见世；11:45 浅草海鲜丼已预约", ForkKnife],
+      ["13:30", "上野博物馆", "选东京国立博物馆等一个馆，预留约 2 小时", Ticket],
+      ["17:00", "银座购物 → Bar Lupin", "晚餐灵活安排；酒吧视排队和营业情况", Camera],
     ],
     photos: [
       ["sensoji.jpg", "浅草寺", "清晨先避开人流"],
       ["tokyo-national-museum-real.jpg", "东京国立博物馆", "上野公园内的本馆"],
-      ["ginza-jnto.jpg", "银座与 Bar Lupin", "先购物，后进入文豪酒吧"],
+      ["ginza-jnto.jpg", "银座与 Bar Lupin", "购物和酒吧留给晚间"],
     ],
-    notes: ["购物二选一：三越＋GINZA SIX，或三丽鸥＋Loft＋UNIQLO", "晚餐：New Torigin 烧鸟与釜饭", "Lupin 现金结算；入店先询问拍照规则"],
-    reserve: "博物馆开放时间；Bar Lupin 当日营业",
+    notes: ["海鲜丼 11:45 已预约，核对店名与订单", "秋叶原移到 10/2 上午", "Lupin 不保证入座；先核对营业与支付规则"],
+    reserve: "海鲜丼订单；博物馆和 Lupin 营业",
     accent: "#194b68",
   },
   {
     date: "10.02",
     weekday: "FRI",
-    city: "东京 · 原宿 / 涩谷",
-    title: "从明治神宫走到涩谷夜景",
-    lead: "绿荫、潮流街区与城市天际线放在同一天，基本可以步行串联。",
-    route: "明治神宫 → 原宿 → 涩谷",
-    mapStops: ["明治神宫", "原宿", "Cat Street", "涩谷 PARCO", "Shibuya Sky"],
+    city: "东京 · 秋叶原 / 银座 / 涩谷",
+    title: "秋叶原购物，鳗鱼饭后去涩谷",
+    lead: "12:30 银座鳗鱼饭是当天固定锚点；购物按东到西走，傍晚留给涩谷。",
+    route: "秋叶原 → 银座鳗鱼饭 → 涩谷",
+    mapStops: ["秋叶原", "12:30 鳗鱼饭", "涩谷 PARCO", "涩谷十字路口", "Shibuya Sky"],
     geoStops: [
-      ["明治神宫", 35.6764, 139.6993],
-      ["原宿", 35.6702, 139.7027],
-      ["Cat Street", 35.6659, 139.7071],
+      ["秋叶原", 35.6984, 139.7731],
+      ["银座鳗鱼饭", 35.6717, 139.7650],
       ["涩谷 PARCO", 35.6620, 139.6988],
+      ["涩谷十字路口", 35.6595, 139.7005],
       ["Shibuya Sky", 35.6584, 139.7016],
     ],
     schedule: [
-      ["08:30", "明治神宫", "清晨参拜，慢走林荫参道", MapPin],
-      ["10:30", "竹下通 / Cat Street", "原宿逛街，12:30 午餐", Camera],
-      ["14:00", "涩谷 PARCO", "16:30 登 Shibuya Sky，晚餐和牛烧肉", Ticket],
+      ["10:00", "秋叶原", "先看目标店；若买得多再考虑寄存或回民宿", Camera],
+      ["12:30", "银座鳗鱼饭", "已预约；从秋叶原留足跨区交通时间", ForkKnife],
+      ["14:30", "涩谷 PARCO → Sky", "角色商店与购物；Sky 门票尚待核对", Ticket],
     ],
     photos: [
-      ["meiji-shrine-unsplash.jpg", "明治神宫", "安静的森林参道"],
-      ["takeshita-street-unsplash.jpg", "竹下通", "原宿最直接的街区印象"],
+      ["akihabara-unsplash.jpg", "秋叶原", "上午逛目标店"],
+      ["ginza-jnto.jpg", "银座", "鳗鱼饭已约 12:30"],
       ["shibuya-crossing-unsplash.jpg", "涩谷", "十字路口与城市夜景"],
     ],
-    notes: ["全日步行量较大", "Shibuya Sky 建议日落前入场", "晚餐：涩谷和牛烧肉"],
-    reserve: "Shibuya Sky 时段票",
+    notes: ["鳗鱼饭改约与取消期限要看订单", "明治神宫与原宿降为可选，不挤占购物", "东京大阪烧预订已取消"],
+    reserve: "鳗鱼饭订单；Shibuya Sky 门票",
     accent: "#d44a3a",
   },
   {
     date: "10.03",
     weekday: "SAT",
     city: "东京 → 京都",
-    title: "新干线越过富士山，住进京都",
-    lead: "上午从东京站出发，车上吃便当看富士山；下午把清水寺到祇园走成一条线。",
-    route: "东京站 → 京都站 → 清水寺 → 祇园",
-    mapStops: ["东京站", "富士山车窗", "京都站", "清水寺", "祇园"],
+    title: "新干线到京都，晚上已约居酒屋",
+    lead: "上午乘车，下午走清水寺与二三年坂；19:00 京都居酒屋是当天的时间锚点。",
+    route: "东京站 → 京都站 → 清水寺 → 居酒屋",
+    mapStops: ["东京站", "富士山车窗", "京都站", "清水寺", "19:00 居酒屋"],
     geoStops: [
       ["东京站", 35.6812, 139.7671],
       ["新富士附近", 35.1614, 138.6764],
       ["京都站", 34.9858, 135.7588],
       ["清水寺", 34.9949, 135.7850],
-      ["祇园", 35.0037, 135.7752],
+      ["东山居酒屋区域", 35.0005, 135.7805],
     ],
     schedule: [
       ["09:30", "东京站", "丸之内站舍、百货地下街与车站便当", MapPin],
       ["11:00", "东海道新干线", "选 D / E 连座，E 座窗边看富士山", Train],
-      ["14:30", "清水寺 → 祇园", "二三年坂、八坂塔、鸭川与京都纪念餐", ForkKnife],
+      ["14:30", "清水寺 → 二三年坂", "先看开放景点，再沿东山下行；19:00 居酒屋已约", ForkKnife],
     ],
     photos: [
       ["tokyo-station-real.jpg", "东京站", "丸之内红砖站舍"],
       ["fuji-train-unsplash.jpg", "东海道新干线", "天气允许时从 E 座看富士山"],
-      ["gion-night-pexels.jpg", "祇园", "东山散步后的古都夜色"],
+      ["gion-night-pexels.jpg", "京都夜晚", "居酒屋结束后再散步"],
     ],
-    notes: ["大件行李可提前寄往大阪，仅带一晚小包去京都", "清水寺必须先于二三年坂", "住宿：京都町屋 / 别墅"],
-    reserve: "东京 → 京都指定席；京都纪念餐",
+    notes: ["大件行李可寄往大阪，京都只带一晚小包", "清水寺放在商店街与晚餐之前", "19:00 居酒屋已约；核对店名和取消规则"],
+    reserve: "新干线指定席；京都居酒屋订单",
     accent: "#194b68",
   },
   {
@@ -139,7 +137,7 @@ const days = [
     weekday: "SUN",
     city: "京都 → 大阪",
     title: "京都清晨，大阪泡汤与夜食",
-    lead: "趁清晨走过千本鸟居，中午抵达大阪；下午把新世界、泡汤和道顿堀连起来。",
+    lead: "清晨看千本鸟居，中午到大阪；新世界与泡汤保留，晚上不设硬性餐厅时段。",
     route: "伏见稻荷 → 难波 → 新世界 → 道顿堀",
     mapStops: ["伏见稻荷", "大阪高津", "新世界", "SPA WORLD", "道顿堀"],
     geoStops: [
@@ -152,14 +150,14 @@ const days = [
     schedule: [
       ["06:30", "伏见稻荷", "千本鸟居走到奥社附近，不必登顶", MapPin],
       ["11:00", "京都 → 大阪", "入住高津民宿，午餐安排新世界串炸", Train],
-      ["14:30", "SPA WORLD → 道顿堀", "泡汤约 2 小时；大阪烧、大丸与 BOOKOFF 按体力选择", ForkKnife],
+      ["14:30", "SPA WORLD → 道顿堀", "泡汤约 2 小时；晚餐按抵达和体力选择", ForkKnife],
     ],
     photos: [
       ["fushimi-inari-pexels.jpg", "伏见稻荷", "清晨的千本鸟居"],
       ["onsen-pexels.jpg", "SPA WORLD", "连续步行后的恢复时段"],
       ["dotonbori-unsplash.jpg", "道顿堀", "大阪烧、章鱼烧与夜景"],
     ],
-    notes: ["午餐可选新世界串炸或黑门しゃぶ笑寿喜烧", "SPA WORLD 10:00 后营业；纹身限制严格", "晚间顺路：大丸心斋桥、BOOKOFF、格力高"],
+    notes: ["午餐可选新世界串炸", "SPA WORLD 开放与纹身规则临近核对", "不为 17:30 大阪烧赶路；道顿堀晚间自由吃"],
     reserve: "京都 → 大阪交通；SPA WORLD 当日信息",
     accent: "#cf3f2d",
   },
@@ -168,7 +166,7 @@ const days = [
     weekday: "MON",
     city: "大阪 · USJ",
     title: "星期一完整留给环球影城",
-    lead: "不移动行李、不叠加城市景点，从开园一直留到万圣节夜场结束。",
+    lead: "USJ 仍是全天主角；同行人想晚餐吃大阪烧，但排队不能挤掉万圣节夜场。",
     route: "高津 → 环球城 → USJ",
     mapStops: ["大阪高津", "环球城", "任天堂世界", "哈利·波特", "万圣节夜场"],
     geoStops: [
@@ -188,8 +186,8 @@ const days = [
       ["hogwarts-usj-pexels.jpg", "哈利·波特魔法世界", "午后与夜间氛围都值得保留"],
       ["usj-globe-unsplash.jpg", "USJ 万圣节", "留到夜场结束再离园"],
     ],
-    notes: ["入园后立刻绑定门票并确认整理券", "主题餐错峰；穿适合全天步行的鞋", "万圣惊魂夜覆盖本次旅行日期"],
-    reserve: "Studio Pass + 含任天堂时段的 Express Pass",
+    notes: ["入园后绑定门票并确认整理券", "园内主题餐错峰，晚间留给万圣节", "同行四人大阪烧为候选；太晚或排队久就改天"],
+    reserve: "USJ 门票 / Express；大阪烧未预约",
     accent: "#194b68",
   },
   {
@@ -392,7 +390,7 @@ function Cover({ goToDay }) {
           <Photo key={photo[0]} item={photo} large={index === 0} />
         ))}
       </div>
-      <span className="cover-stamp">行程视觉版<br />V2.0</span>
+      <span className="cover-stamp">群聊更新版<br />V3.0</span>
     </section>
   );
 }
@@ -443,7 +441,7 @@ function DaySlide({ day, dayIndex }) {
           </ul>
           <div className="reserve">
             <Ticket />
-            <div><span>建议提前确认</span><strong>{day.reserve}</strong></div>
+            <div><span>预订状态 / 待确认</span><strong>{day.reserve}</strong></div>
           </div>
           <div className="weather-note">
             <span>穿着提示</span>
@@ -457,9 +455,9 @@ function DaySlide({ day, dayIndex }) {
 
 function Checklist() {
   const groups = [
-    ["先订", ["USJ 门票与含任天堂时段的 Express Pass", "Shibuya Sky 日落时段票", "东京 → 京都 D / E 连座", "京都纪念餐"]],
-    ["出发前确认", ["Bar Lupin 营业信息与现金", "SPA WORLD 维护与开放信息", "Rapi:t 机场交通", "博物馆开放时段"]],
-    ["行李策略", ["东京可将大行李直送大阪", "京都只带一晚随身包", "USJ 当天只带小包", "返程预留机场购物时间"]],
+    ["已预约，核对订单", ["9/30 银座和牛：最终时间与晚到规则", "10/1 11:45 浅草海鲜丼", "10/2 12:30 银座鳗鱼饭", "10/3 19:00 京都居酒屋"]],
+    ["尚待确认", ["USJ 门票与任天堂时段 Express", "Shibuya Sky 日落时段票", "东京 → 京都 D / E 连座", "10/5 大阪烧不能预约，排队视体力"]],
+    ["现场动线", ["首晚若仍 18:00 预约，直达银座寄存行李", "京都只带一晚随身包", "Lupin 和 SPA WORLD 核对营业规则", "10/6 提前抵达关西机场"]],
   ];
   return (
     <section className="slide checklist-slide">
@@ -493,7 +491,12 @@ function Checklist() {
 export function App() {
   const total = days.length + 3;
   const [page, setPage] = useState(0);
+  const deckRef = useRef(null);
   const safeSetPage = (next) => setPage(Math.max(0, Math.min(total - 1, next)));
+
+  useEffect(() => {
+    if (deckRef.current) deckRef.current.scrollTop = 0;
+  }, [page]);
 
   useEffect(() => {
     const onKey = (event) => {
@@ -513,7 +516,7 @@ export function App() {
 
   return (
     <main className="prototype-shell">
-      <div className="deck">
+      <div className="deck" ref={deckRef}>
         {content}
         <div className="deck-corner">JP · 2026</div>
       </div>
