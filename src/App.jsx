@@ -108,7 +108,7 @@ const days = [
     weekday: "SAT",
     city: "东京 → 京都",
     title: "新干线到京都，晚上已约居酒屋",
-    lead: "上午乘车，下午走清水寺与二三年坂；19:00 京都居酒屋是当天的时间锚点。",
+    lead: "新干线票已购；到京都后走清水寺与二三年坂，19:00 居酒屋是晚间锚点。",
     route: "东京站 → 京都站 → 清水寺 → 居酒屋",
     mapStops: ["东京站", "富士山车窗", "京都站", "清水寺", "19:00 居酒屋"],
     geoStops: [
@@ -119,9 +119,9 @@ const days = [
       ["东山居酒屋区域", 35.0005, 135.7805],
     ],
     schedule: [
-      ["09:30", "东京站", "丸之内站舍、百货地下街与车站便当", MapPin],
-      ["11:00", "东海道新干线", "选 D / E 连座，E 座窗边看富士山", Train],
-      ["14:30", "清水寺 → 二三年坂", "先看开放景点，再沿东山下行；19:00 居酒屋已约", ForkKnife],
+      ["按票面", "东京站", "预留进站与买车站便当时间；勿按旧版 11:00 出发", MapPin],
+      ["已购票", "东海道新干线", "群聊讨论过约 9 点车次与 D / E 座；以订单为准", Train],
+      ["下午", "清水寺 → 二三年坂", "先看开放景点，再沿东山下行；19:00 居酒屋已约", ForkKnife],
     ],
     photos: [
       ["tokyo-station-real.jpg", "东京站", "丸之内红砖站舍"],
@@ -129,7 +129,7 @@ const days = [
       ["gion-night-pexels.jpg", "京都夜晚", "居酒屋结束后再散步"],
     ],
     notes: ["大件行李可寄往大阪，京都只带一晚小包", "清水寺放在商店街与晚餐之前", "19:00 居酒屋已约；核对店名和取消规则"],
-    reserve: "新干线指定席；京都居酒屋订单",
+    reserve: "新干线已购：核对车次 / 座位；京都居酒屋订单",
     accent: "#194b68",
   },
   {
@@ -164,10 +164,38 @@ const days = [
   {
     date: "10.05",
     weekday: "MON",
+    city: "大阪 · 市区",
+    title: "大阪市区慢游与四人大阪烧",
+    lead: "USJ 票在 10/6，今天把大阪烧与城市体验放在一起；热门店只能现场排队。",
+    route: "高津 → 大阪城 / 心斋桥 → 道顿堀",
+    mapStops: ["大阪高津", "大阪城", "心斋桥", "道顿堀 / 大阪烧"],
+    geoStops: [
+      ["大阪高津民宿", 34.6674, 135.5145],
+      ["大阪城", 34.6873, 135.5262],
+      ["心斋桥", 34.6746, 135.5016],
+      ["道顿堀", 34.6687, 135.5013],
+    ],
+    schedule: [
+      ["上午", "大阪城或慢早餐", "看城堡外观即可；前一天泡汤累了就睡足", MapPin],
+      ["下午", "心斋桥与难波", "购物、游戏厅、喫茶店按兴趣选，不赶景点", Camera],
+      ["晚间", "四人大阪烧", "热门店目前只能排队；提前商量可接受的等位时间", ForkKnife],
+    ],
+    photos: [
+      ["japanese-breakfast-pexels.jpg", "大阪慢早餐", "早晨不用赶车"],
+      ["dotonbori-unsplash.jpg", "道顿堀", "晚餐前后散步"],
+      ["onsen-pexels.jpg", "泡汤后的大阪", "留出轻松的市区时间"],
+    ],
+    notes: ["大阪烧是 10/5 晚餐候选，不是已预约", "热门店等位过久就换附近餐厅", "今晚早点回去，为次日 USJ 留体力"],
+    reserve: "大阪烧店营业与排队；USJ 票面信息",
+    accent: "#194b68",
+  },
+  {
+    date: "10.06",
+    weekday: "TUE",
     city: "大阪 · USJ",
-    title: "星期一完整留给环球影城",
-    lead: "USJ 仍是全天主角；同行人想晚餐吃大阪烧，但排队不能挤掉万圣节夜场。",
-    route: "高津 → 环球城 → USJ",
+    title: "已购票：USJ 与万圣节夜场",
+    lead: "群聊明确买了 10/6 的园区票，含 12:00 任天堂入场；快速通关并未确认购买。",
+    route: "高津 → 环球城 → 任天堂世界 → 夜场",
     mapStops: ["大阪高津", "环球城", "任天堂世界", "哈利·波特", "万圣节夜场"],
     geoStops: [
       ["大阪高津民宿", 34.6674, 135.5145],
@@ -177,47 +205,45 @@ const days = [
       ["万圣节夜场", 34.6654, 135.4323],
     ],
     schedule: [
-      ["06:30", "前往环球城", "按官方开园时间倒推，争取提前 60–90 分钟抵达", Train],
-      ["开园后", "超级任天堂世界", "按 Express 时段安排马力欧、咚奇刚与园区探索", Ticket],
-      ["18:00后", "万圣节夜场", "哈利·波特、限定餐食、街头僵尸与夜间氛围", Camera],
+      ["开园前", "前往环球城", "按 10/6 官方开园时间倒推，预留进站与安检时间", Train],
+      ["12:00", "超级任天堂世界", "群聊选定的入场时段；按票面确认具体使用规则", Ticket],
+      ["晚间", "万圣节夜场", "看当日活动安排；夜场后直接回大阪住宿", Camera],
     ],
     photos: [
-      ["usj-real.jpg", "超级任天堂世界", "当天最优先的园区"],
-      ["hogwarts-usj-pexels.jpg", "哈利·波特魔法世界", "午后与夜间氛围都值得保留"],
+      ["usj-real.jpg", "超级任天堂世界", "已选 12:00 入场"],
+      ["hogwarts-usj-pexels.jpg", "哈利·波特魔法世界", "主题园区体验"],
       ["usj-globe-unsplash.jpg", "USJ 万圣节", "留到夜场结束再离园"],
     ],
-    notes: ["入园后绑定门票并确认整理券", "园内主题餐错峰，晚间留给万圣节", "同行四人大阪烧为候选；太晚或排队久就改天"],
-    reserve: "USJ 门票 / Express；大阪烧未预约",
-    accent: "#194b68",
+    notes: ["门票已购，含任天堂入场保障；不是快速通关", "核对票面使用日期与二维码", "夜场活动和关园时间以官方日历为准"],
+    reserve: "USJ 已购：核对 10/6 日期、12:00 时段与人数",
+    accent: "#cf3f2d",
   },
   {
-    date: "10.06",
-    weekday: "TUE",
+    date: "10.07",
+    weekday: "WED",
     city: "大阪 → 关西机场",
-    title: "慢早餐与最后购物，从难波返程",
-    lead: "USJ 后不再早起赶景点，上午在难波轻松收尾，留足机场与免税购物时间。",
-    route: "高津 → 难波 → KIX",
-    mapStops: ["大阪高津", "难波早餐", "最后购物", "南海难波", "关西 T1"],
+    title: "大阪退房，上午从关西机场返程",
+    lead: "返程已从 10/6 下午改到 10/7 上午；具体起飞时间以更新后的机票为准。",
+    route: "高津 → 南海难波 → 关西机场",
+    mapStops: ["大阪高津", "南海难波", "关西 T1"],
     geoStops: [
       ["大阪高津民宿", 34.6674, 135.5145],
-      ["难波早餐", 34.6665, 135.5018],
-      ["心斋桥购物", 34.6720, 135.5010],
       ["南海难波站", 34.6627, 135.5019],
       ["关西机场 T1", 34.4347, 135.2441],
     ],
     schedule: [
-      ["08:30", "大阪早餐", "日式定食或喫茶店，按体力自然醒", ForkKnife],
-      ["10:00", "难波最后购物", "百货地下层、药妆与伴手礼；11:30 前取行李", Camera],
-      ["12:00", "南海难波 → KIX", "优先 Rapi:t，约 13:00 抵达，16:45 起飞", AirplaneTilt],
+      ["按航班", "退房与交通", "前晚 USJ 可能玩到晚，提前打包行李", Bed],
+      ["按航班", "南海难波 → KIX", "按实际起飞时间倒推，避免沿用旧版 16:45 时刻", Train],
+      ["上午", "关西机场 T1", "预留值机、托运、安检和出境时间", AirplaneTilt],
     ],
     photos: [
-      ["japanese-breakfast-pexels.jpg", "日式早餐", "回酒店后补充体力"],
-      ["dotonbori-unsplash.jpg", "难波", "最后补齐伴手礼与购物"],
-      ["kansai-airport-real.jpg", "关西机场", "预留充足值机时间"],
+      ["japanese-breakfast-pexels.jpg", "早餐", "有余量再吃，不硬排餐厅"],
+      ["kansai-airport-real.jpg", "关西机场", "以新机票时刻为准"],
+      ["dotonbori-unsplash.jpg", "大阪", "旅程结束前的城市记忆"],
     ],
-    notes: ["不安排大阪城或远距离景点", "南海难波站预留找站与购票时间", "起飞前至少 3 小时到机场"],
-    reserve: "Rapi:t / 南海机场交通",
-    accent: "#cf3f2d",
+    notes: ["务必核对 10/7 返程机票的起飞时间", "前晚把行李和退房事项准备好", "不要在返程早晨安排远距离景点"],
+    reserve: "返程机票已改期；确认具体航班与机场交通",
+    accent: "#194b68",
   },
 ];
 
@@ -325,7 +351,7 @@ function RouteMapSlide() {
       <header className="map-slide-head">
         <div>
           <span className="eyebrow">INTERACTIVE ROUTE MAP</span>
-          <h2>七天路线地图</h2>
+          <h2>八天路线地图</h2>
           <p>切换日期查看真实位置、当天移动方向与跨城市距离；地图支持拖动和缩放。</p>
         </div>
         <div className="map-legend">
@@ -369,11 +395,11 @@ function Cover({ goToDay }) {
   return (
     <section className="slide cover-slide">
       <div className="cover-copy">
-        <span className="eyebrow">JAPAN TRIP · 7 DAYS</span>
+        <span className="eyebrow">JAPAN TRIP · 8 DAYS</span>
         <h1>东京 · 京都 · 大阪<br />旅行计划</h1>
-        <p className="cover-date">2026.09.30 — 10.06</p>
+        <p className="cover-date">2026.09.30 — 10.07</p>
         <div className="cover-route">
-          {["东京 3晚", "京都 1晚", "大阪 2晚"].map((stop, index) => (
+          {["东京 3晚", "京都 1晚", "大阪 3晚"].map((stop, index) => (
             <button key={stop} onClick={() => goToDay(index === 0 ? 2 : index === 1 ? 5 : 6)}>
               <span>{index + 1}</span>{stop}
             </button>
@@ -390,7 +416,7 @@ function Cover({ goToDay }) {
           <Photo key={photo[0]} item={photo} large={index === 0} />
         ))}
       </div>
-      <span className="cover-stamp">群聊更新版<br />V3.0</span>
+      <span className="cover-stamp">票务校正版<br />V3.1</span>
     </section>
   );
 }
@@ -445,7 +471,7 @@ function DaySlide({ day, dayIndex }) {
           </div>
           <div className="weather-note">
             <span>穿着提示</span>
-            <strong>{dayIndex === 5 ? "轻便鞋 · 可快速干燥" : "分层穿搭 · 随身小伞"}</strong>
+            <strong>{dayIndex === 6 ? "轻便鞋 · 可快速干燥" : "分层穿搭 · 随身小伞"}</strong>
           </div>
         </aside>
       </div>
@@ -455,9 +481,9 @@ function DaySlide({ day, dayIndex }) {
 
 function Checklist() {
   const groups = [
-    ["已预约，核对订单", ["9/30 银座和牛：最终时间与晚到规则", "10/1 11:45 浅草海鲜丼", "10/2 12:30 银座鳗鱼饭", "10/3 19:00 京都居酒屋"]],
-    ["尚待确认", ["USJ 门票与任天堂时段 Express", "Shibuya Sky 日落时段票", "东京 → 京都 D / E 连座", "10/5 大阪烧不能预约，排队视体力"]],
-    ["现场动线", ["首晚若仍 18:00 预约，直达银座寄存行李", "京都只带一晚随身包", "Lupin 和 SPA WORLD 核对营业规则", "10/6 提前抵达关西机场"]],
+    ["已购票 / 已预约", ["10/3 新干线已购，核对车次与座位", "10/6 USJ 已购，核对任天堂 12:00 入场", "9/30 银座和牛：最终时间与晚到规则", "10/1 海鲜丼、10/2 鳗鱼饭、10/3 居酒屋订单"]],
+    ["尚待确认", ["10/7 返程航班准确起飞时间", "Shibuya Sky 日落时段票", "USJ 套票与快速通关并非一回事", "10/5 大阪烧不能预约，排队视体力"]],
+    ["现场动线", ["首晚若仍 18:00 预约，直达银座寄存行李", "京都只带一晚随身包", "Lupin 和 SPA WORLD 核对营业规则", "10/6 夜场后回大阪；10/7 去机场"]],
   ];
   return (
     <section className="slide checklist-slide">
@@ -480,7 +506,7 @@ function Checklist() {
         <i></i>
         <div><MapPin weight="fill" /><strong>京都</strong><span>1晚</span></div>
         <i></i>
-        <div><MapPin weight="fill" /><strong>大阪</strong><span>2晚</span></div>
+        <div><MapPin weight="fill" /><strong>大阪</strong><span>3晚</span></div>
         <i></i>
         <div><AirplaneTilt weight="fill" /><strong>关西机场</strong><span>返程</span></div>
       </div>
@@ -522,7 +548,7 @@ export function App() {
       </div>
       <nav className="deck-nav" aria-label="幻灯片导航">
         <button className="arrow-button" aria-label="上一页" disabled={page === 0} onClick={() => safeSetPage(page - 1)}><ArrowLeft /></button>
-        <div className="page-dots">
+        <div className="page-dots" style={{ "--page-count": total }}>
           {Array.from({ length: total }, (_, index) => (
             <button
               key={index}
