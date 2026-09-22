@@ -26,5 +26,7 @@ All destination imagery used in the prototype is genuine web-sourced photography
 | `kiyomizudera-pexels.jpg` | Kiyomizu-dera | [Pexels](https://www.pexels.com/photo/10889285/) |
 | `gion-night-pexels.jpg` | Gion at night | [Pexels](https://www.pexels.com/photo/traditional-street-scene-in-gion-kyoto-at-night-28969414/) |
 | `fushimi-inari-pexels.jpg` | Fushimi Inari torii gates | [Pexels](https://www.pexels.com/photo/landscape-photography-of-torii-gates-5887272/) |
+| `eikando-commons.jpg` | Zen garden at Zenrinji Eikando, photographed in September 2018 | [Christophe95 / Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Zen_garden_at_Zenrinji_Eikando.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `harukas-300-commons.jpg` | Osaka skyline seen from Abeno Harukas, photographed May 2026 | [Loggieloggie / Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Osaka_Skyline_from_Abeno_Harukas_20260505_121829_UTC%2B9_23_mm.jpg), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | `japanese-breakfast-pexels.jpg` | Japanese breakfast | [Pexels](https://www.pexels.com/photo/top-view-photo-of-meal-4110430/) |
 | `kansai-airport-real.jpg` | Kansai Airport | Unsplash |
