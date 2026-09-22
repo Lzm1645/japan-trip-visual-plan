@@ -17,3 +17,4 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Keep a source record for all photographs in `photo-sources.md`.
 - Treat the latest confirmed travel decisions as the content source of truth. Distinguish an actual reservation from a proposed restaurant, and flag uncertain times instead of inventing confirmation.
 - The trip site is public. Never copy raw group-chat messages, booking identifiers, participants' names, or private exports into this repository.
+- For public maps and prose, show lodging neighborhoods or nearby stations, never a traveler's exact accommodation door number even when supplied privately. Public restaurant addresses may be shown.
