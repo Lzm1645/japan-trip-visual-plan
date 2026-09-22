@@ -8,6 +8,8 @@
 >
 > [打开在线可视化与每日地图](https://lzm1645.github.io/japan-trip-visual-plan/)
 
+可视化最后一页新增“空档行程建议”，供同行讨论；其中顺正汤豆腐、串炸达摩、やまちゃん章鱼烧、SPA WORLD 和游船时段均为建议，**不表示已预订**。已确认的每日行程页保持原状。
+
 这版依据截至 2026 年 9 月 22 日的同行群聊及用户补充的住宿、餐厅信息修订。**新干线和 USJ 已购票**；其车次、席位、票面日期与套票权益仍应以各自订单核实。返程为 **10/7 09:30**。公开仓库不存放民宿门牌、聊天原文、订单截图、联系方式或同行人姓名。
 
 ## 八天总览
@@ -113,4 +115,5 @@
 - [关西乐享周游券可用设施](https://www.klook.cn/zh-CN/activity/74650-have-fun-in-kansai-pass-one-week-free-pass/)：仅作候选来源；最终以所购套票券面为准。
 - [永观堂通常参拜时间](https://www.eikando.or.jp/mobile_jp/mb_haikan.html)与[京都哲学之道区域说明](https://ja.kyoto.travel/area/area05.php)：10/4 下午动线参考。
 - [ひなと丸 雷门柳小路店](https://hinatomaru.com/raimon/)、[一蘭 浅草店](https://ichiran.com/shop/tokyo/asakusa/)、[炭焼うな富士 八重洲店](https://sumiyaki-unafuji.com/shops/yaesu/)、[Salmon Noodle Kyoto](https://salmonnoodlekyoto.com/)、[福太郎 本店](https://2951.jp/access.html)：店址与营业信息；临行再核对。
+- [京都站行李寄存](https://www.kyoto-station-building.co.jp/qa/)、[南禅寺顺正](https://www.to-fu.co.jp/en/reserve/)、[串炸达摩店铺列表](https://www.kushikatu-daruma.com/location/)、[やまちゃん本店](https://takoyaki-yamachan.net/shoplist/%E6%9C%AC%E5%BA%97/)、[SPA WORLD](https://www.spaworld.co.jp/english/info/eigyo/)与[Wonder Cruise](https://wondercruise.jp/en/wondercruise/)：PPT 末页建议的资料来源；营业和可预约时段以临行时官方页面为准。
 - 同行群聊用于核对行程变化和购票状态；公开页面不含聊天原文、参与者姓名、联系方式或证件信息。

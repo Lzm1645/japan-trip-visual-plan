@@ -429,7 +429,7 @@ function Cover({ goToDay }) {
           <Photo key={photo[0]} item={photo} large={index === 0} />
         ))}
       </div>
-      <span className="cover-stamp">餐食动线版<br />V3.3</span>
+      <span className="cover-stamp">餐食动线版<br />V3.4</span>
     </section>
   );
 }
@@ -527,8 +527,58 @@ function Checklist() {
   );
 }
 
+function SuggestedPlan() {
+  return (
+    <section className="slide suggestion-slide">
+      <header>
+        <span className="eyebrow">OPTIONAL ROUTE · FOR DISCUSSION</span>
+        <h2>空档行程建议</h2>
+        <p>保留已购车票、USJ 门票与现有餐厅。以下新增安排仅供同行讨论，尚未预订。</p>
+      </header>
+
+      <div className="suggestion-tokyo">
+        <div className="suggestion-date"><strong>10.02</strong><span>东京上午</span></div>
+        <p><b>银座购物 10:00–11:45</b>，随后去八重洲吃 12:30 的炭焼うな富士。首晚落地后只保证晚餐，Lupin 视体力决定。</p>
+      </div>
+
+      <div className="suggestion-columns">
+        <article>
+          <div className="suggestion-date"><strong>10.04</strong><span>京都至大阪</span></div>
+          <h3>伏见清晨，南禅寺午餐</h3>
+          <ol>
+            <li><time>06:30</time><span>伏见稻荷；退房后到京都站寄存行李</span></li>
+            <li><time>11:00</time><span>南禅寺散步，午餐候选：顺正汤豆腐</span></li>
+            <li><time>14:00</time><span>永观堂与哲学之道南段，不追红叶</span></li>
+            <li><time>傍晚</time><span>回京都站取行李，前往大阪</span></li>
+            <li><time>晚餐</time><span>候选：串炸达摩法善寺店</span></li>
+          </ol>
+        </article>
+        <article>
+          <div className="suggestion-date"><strong>10.05</strong><span>大阪市区</span></div>
+          <h3>泡汤后到道顿堀</h3>
+          <ol>
+            <li><time>10:00</time><span>SPA WORLD 泡汤约两小时</span></li>
+            <li><time>12:15</time><span>天王寺轻午餐：やまちゃん章鱼烧＋轻食</span></li>
+            <li><time>13:30</time><span>Harukas 300；下午回难波购物</span></li>
+            <li><time>17:30</time><span>Wonder Cruise，先核对券面并预约</span></li>
+            <li><time>晚餐</time><span>福太郎本店；排队过久就用附近替补</span></li>
+          </ol>
+        </article>
+      </div>
+
+      <footer className="suggestion-foot">
+        <strong>先核对</strong>
+        <span>京都站寄存须按时取件；泡汤有纹身限制；游船持 Fun Kansai Pass 应选 17:00 后班次。</span>
+        <a href="https://www.kyoto-station-building.co.jp/qa/" target="_blank" rel="noreferrer">京都站</a>
+        <a href="https://www.spaworld.co.jp/english/info/ryokin/" target="_blank" rel="noreferrer">SPA WORLD</a>
+        <a href="https://wondercruise.jp/en/wondercruise/" target="_blank" rel="noreferrer">Wonder Cruise</a>
+      </footer>
+    </section>
+  );
+}
+
 export function App() {
-  const total = days.length + 3;
+  const total = days.length + 4;
   const [page, setPage] = useState(0);
   const deckRef = useRef(null);
   const safeSetPage = (next) => setPage(Math.max(0, Math.min(total - 1, next)));
@@ -549,7 +599,8 @@ export function App() {
   const content = useMemo(() => {
     if (page === 0) return <Cover goToDay={safeSetPage} />;
     if (page === 1) return <RouteMapSlide />;
-    if (page === total - 1) return <Checklist />;
+    if (page === total - 2) return <Checklist />;
+    if (page === total - 1) return <SuggestedPlan />;
     return <DaySlide day={days[page - 2]} dayIndex={page - 2} />;
   }, [page, total]);
 
@@ -569,7 +620,7 @@ export function App() {
               aria-label={`第 ${index + 1} 页`}
               onClick={() => safeSetPage(index)}
             >
-              <span>{index === 0 ? "封面" : index === 1 ? "地图" : index === total - 1 ? "清单" : `D${index - 1}`}</span>
+              <span>{index === 0 ? "封面" : index === 1 ? "地图" : index === total - 2 ? "清单" : index === total - 1 ? "建议" : `D${index - 1}`}</span>
             </button>
           ))}
         </div>
